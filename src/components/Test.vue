@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { request } from "../api";
+import { request } from "./api";
 export default {
   methods: {
     /** 发起请求1
