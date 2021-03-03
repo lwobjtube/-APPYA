@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { request } from "./api";
+import { request } from "../api/api";
 export default {
   methods: {
     /** 发起请求1
@@ -27,7 +27,7 @@ export default {
      */
     handleRequest1(method) {
       request[method](
-        "https://www.fastmock.site/mock/240ac3764aa8ee3963b796cfdc668a88/test/getinfo",
+        "/mock/240ac3764aa8ee3963b796cfdc668a88/test/getinfo",
         {
           key: "测试传参",
         }
@@ -42,7 +42,7 @@ export default {
     handleRequest2(method) {
       request({
         url:
-          "https://www.fastmock.site/mock/240ac3764aa8ee3963b796cfdc668a88/test/getinfo",
+          "mock/240ac3764aa8ee3963b796cfdc668a88/test/getinfo",
         method,
         data: {
           key: "测试传参",
