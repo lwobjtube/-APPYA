@@ -1,21 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Test />
+<!--    
+    <Test /> -->
+
+    <div class="bj">
+      <router-link to='/'>home</router-link>|
+      <router-link to='/login'>login</router-link>|
+      <router-link to='/minsse'>minsse</router-link>
+         <router-link to='/Test'>Test</router-link>
+    </div>
+
+     <router-view/>
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import Test from "./components/Test";
-export default {
-  name: "App",
-  components: {
-    // HelloWorld,
-    Test,
-  },
-};
+// import Test from "./components/Test";
+// export default {
+//   name: "App",
+//   components: {
+//     // HelloWorld,
+//     Test,
+//     home,
+//   },
+// };
 </script>
 
 <style>
@@ -26,5 +35,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+    padding: 30px;
+}
+.bj{
+
+  margin: 30px;
 }
 </style>
