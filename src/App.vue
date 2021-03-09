@@ -3,28 +3,16 @@
 <!--    
     <Test /> -->
 
-    <div class="bj">
-      <router-link to='/'>home</router-link>|
-      <router-link to='/login'>login</router-link>|
-      <router-link to='/minsse'>minsse</router-link>
-         <router-link to='/Test'>Test</router-link>
-    </div>
+   
 
      <router-view/>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-// import Test from "./components/Test";
-// export default {
-//   name: "App",
-//   components: {
-//     // HelloWorld,
-//     Test,
-//     home,
-//   },
-// };
+export default {
+  name: "App",
+};
 </script>
 
 <style>

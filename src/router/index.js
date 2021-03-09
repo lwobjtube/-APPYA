@@ -1,36 +1,42 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import home from '../views/home.vue';
+import Home from '../views/home.vue';
+import Login from '../views/login.vue';
 Vue.use(VueRouter)
 
-const routes =[
+const routes = [
     {
-        path:'/',
-        name:'home',
-       component:home
-    },{
-        path:'/minsse',
-        name:'minsse',
-        component:()=>import('../views/minsse.vue')
-    },{
-        path: '/login',
-        name: 'login',
-       component:()=>import('../views/login.vue')
+        path: '/',
+        name: 'Login',
+        component: Login
+    }, {
+        path: '/home',
+        name: 'Home',
+        component: Home
     },
-    {
-        path: '/Test',
-        name: 'Test',
-       component:()=>import('../components/Test.vue')
-    }
-
-
+    // {
+    //     path: '/Test',
+    //     name: 'Test',
+    //     component: () => import('../components/Test.vue')
+    // }
 
 ]
 
-const router =new VueRouter({
-    mode:'history',
-    base:process.env.BASE_URL,
+const router = new VueRouter({
     routes
-})
+});
+router.beforeEach((to, from, next) => {
+    console.log(to)//   /home
+    if(to.fullPath=="/")
+        next()
+    else {
+        let userInfo  =localStorage.getItem("userInfo") 
+        if(userInfo!=null && userInfo != "") {
+            next()
+        }else {
+            next("/")
+        }
+    }
+  })
 
 export default router
